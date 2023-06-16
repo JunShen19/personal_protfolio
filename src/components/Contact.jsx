@@ -1,52 +1,29 @@
 import React from "react";
-import Wrappers from "../wrappers/Test";
-import { Outlet } from "react-router-dom";
-
+import Wrappers from "../wrappers/Contact";
+import { Link, Outlet } from "react-router-dom";
+import { useGlobalContext } from "../context";
 const Contact = () => {
+  const { isDarkTheme, toggleDarkTheme } = useGlobalContext();
+
   return (
     <Wrappers>
-      <section className="contact">
-        <div className="contact-content">
-          <h2>聯絡我</h2>
-          <p>如果你有任何問題或合作機會，歡迎與我聯繫。</p>
-          <ul className="contact-info">
-            <li>
-              <span>電子郵件：</span>
-              <a href="mailto:your-email@example.com">your-email@example.com</a>
-            </li>
-            <li>
-              <span>電話號碼：</span>
-              <a href="tel:+1234567890">+1234567890</a>
-            </li>
-            <li>
-              <span>社交媒體：</span>
-              <div className="social-icons">
-                <a
-                  href="https://www.linkedin.com/your-profile"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="fab fa-linkedin"></i>
-                </a>
-                <a
-                  href="https://www.twitter.com/your-profile"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="fab fa-twitter"></i>
-                </a>
-                <a
-                  href="https://www.github.com/your-profile"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="fab fa-github"></i>
-                </a>
-              </div>
-            </li>
-          </ul>
+      <div>
+        <h1>Contact.</h1>
+        <h3>You can contact me directly using the following email address:</h3>
+        <p>tony88010955@gmail.com</p>
+      </div>
+      <a href="src\assets\resume.pdf" download className="download-button">
+        Download Resume
+      </a>
+      <Link to="/" className="link">
+        Go Back Home.
+        <div className="arrow-container">
+          <img
+            src="src\assets\arrow-right-svgrepo-com.svg"
+            className={isDarkTheme ? "arrow-dark" : "arrow"}
+          ></img>
         </div>
-      </section>
+      </Link>
       <Outlet />
     </Wrappers>
   );

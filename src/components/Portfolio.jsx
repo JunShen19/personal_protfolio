@@ -1,7 +1,11 @@
 import React from "react";
 import { useFetchProjects } from "../fetchProjects";
 import Wrapper from "../wrappers/Projects";
+import { Link, Outlet } from "react-router-dom";
+import { useGlobalContext } from "../context";
 const Projects = () => {
+  const { isDarkTheme, toggleDarkTheme } = useGlobalContext();
+
   const [loading, projects] = useFetchProjects();
   if (loading) {
     return (
@@ -17,7 +21,7 @@ const Projects = () => {
     <Wrapper>
       <section className="projects">
         <div className="title">
-          <h2>My Works</h2>
+          <h2>My Projects</h2>
           <div className="title-underline"></div>
         </div>
         <div className="projects-center">
@@ -40,6 +44,15 @@ const Projects = () => {
           })}
         </div>
       </section>
+      <Link to="/contact" className="link">
+        Lets Go To My Resume.
+        <div className="arrow-container">
+          <img
+            src="src\assets\arrow-right-svgrepo-com.svg"
+            className={isDarkTheme ? "arrow-dark" : "arrow"}
+          ></img>
+        </div>
+      </Link>
     </Wrapper>
   );
 };

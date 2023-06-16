@@ -10,7 +10,13 @@ const Header = () => {
   return (
     <Wrapper>
       <div className="nav-center">
-        <span className="logo">Junshen</span>
+        <span className="logo">
+          <img
+            src="src\assets\352407633_228095676748173_1386981355860839164_n.gif"
+            alt="GIF"
+            className="nav-img"
+          />
+        </span>
         <div className="nav-links">
           <NavLink to="/" className="nav-link">
             Home.

@@ -1,14 +1,25 @@
 import React from "react";
 import Wrapper from "../wrappers/Hero";
 import { Link, Outlet } from "react-router-dom";
+import { useGlobalContext } from "../context";
 
 const Hero = () => {
+  const { isDarkTheme, toggleDarkTheme } = useGlobalContext();
+
   return (
     <Wrapper>
       <section className="hero">
         <div className="hero-content">
-          <h1>Hello! I'm Jun-Shen, Lin.</h1>
-          <p>
+          <h1>
+            <span>Hello!</span>
+            <span>&nbsp;</span>
+            <span>I'm</span>
+            <span>&nbsp;</span>
+            <span>Jun-Shen,</span>
+            <span>&nbsp;</span>
+            <span>Lin.</span>
+          </h1>
+          <h4>
             <span>I</span>
             <span>&nbsp;</span>
             <span>a</span>
@@ -28,15 +39,130 @@ const Hero = () => {
             <span>Computer</span>
             <span>&nbsp;</span>
             <span>Science.</span>
+          </h4>
+          <p>
+            <span>Hello,</span>
+            <span>&nbsp;</span>
+            <span>I'm</span>
+            <span>&nbsp;</span>
+            <span>a</span>
+            <span>&nbsp;</span>
+            <span>person</span>
+            <span>&nbsp;</span>
+            <span>who</span>
+            <span>&nbsp;</span>
+            <span>loves</span>
+            <span>&nbsp;</span>
+            <span>learning</span>
+            <span>&nbsp;</span>
+            <span>and</span>
+            <span>&nbsp;</span>
+            <span>finds</span>
+            <span>&nbsp;</span>
+            <span>great</span>
+            <span>&nbsp;</span>
+            <span>motivation</span>
+            <span>&nbsp;</span>
+            <span>in</span>
+            <span>&nbsp;</span>
+            <span>things</span>
+            <span>&nbsp;</span>
+            <span>that</span>
+            <span>&nbsp;</span>
+            <span>help</span>
+            <span>&nbsp;</span>
+            <span>me</span>
+            <span>&nbsp;</span>
+            <span>grow.</span>
+            <span>&nbsp;</span>
+            <span>I</span>
+            <span>&nbsp;</span>
+            <span>enjoy</span>
+            <span>&nbsp;</span>
+            <span>engaging</span>
+            <span>&nbsp;</span>
+            <span>in</span>
+            <span>&nbsp;</span>
+            <span>conversations</span>
+            <span>&nbsp;</span>
+            <span>with</span>
+            <span>&nbsp;</span>
+            <span>others.</span>
+            <span>&nbsp;</span>
           </p>
-          <Link to="/about" className="hero-link">
-            To learn more.
+          <p>
+            <span>In</span>
+            <span>&nbsp;</span>
+            <span>addition</span>
+            <span>&nbsp;</span>
+            <span>to</span>
+            <span>&nbsp;</span>
+            <span>that,</span>
+            <span>&nbsp;</span>
+            <span>I</span>
+            <span>&nbsp;</span>
+            <span>have</span>
+            <span>&nbsp;</span>
+            <span>a</span>
+            <span>&nbsp;</span>
+            <span>passion</span>
+            <span>&nbsp;</span>
+            <span>for</span>
+            <span>&nbsp;</span>
+            <span>dancing</span>
+            <span>&nbsp;</span>
+            <span>and</span>
+            <span>&nbsp;</span>
+            <span>painting.</span>
+            <span>&nbsp;</span>
+            <span>Currently,</span>
+            <span>&nbsp;</span>
+            <span>I</span>
+            <span>&nbsp;</span>
+            <span>am</span>
+            <span>&nbsp;</span>
+            <span>busy</span>
+            <span>&nbsp;</span>
+            <span>with</span>
+            <span>&nbsp;</span>
+            <span>my</span>
+            <span>&nbsp;</span>
+            <span>second</span>
+            <span>&nbsp;</span>
+            <span>year</span>
+            <span>&nbsp;</span>
+            <span>of</span>
+            <span>&nbsp;</span>
+            <span>graduate</span>
+            <span>&nbsp;</span>
+            <span>school</span>
+            <span>&nbsp;</span>
+            <span>and</span>
+            <span>&nbsp;</span>
+            <span>working</span>
+            <span>&nbsp;</span>
+            <span>on</span>
+            <span>&nbsp;</span>
+            <span>my</span>
+            <span>&nbsp;</span>
+            <span>thesis.</span>
+            <span>&nbsp;</span>
+          </p>
+          <Link to="/about" className="link">
+            See More About Me.
+            <div className="arrow-container">
+              <img
+                src="src\assets\arrow-right-svgrepo-com.svg"
+                className={isDarkTheme ? "arrow-dark" : "arrow"}
+              ></img>
+            </div>
           </Link>
         </div>
         <div className="container">
           <img
-            src="src\assets\352407633_228095676748173_1386981355860839164_n.gif"
+            src="src\assets\352116640_596434332307557_5285434189639619787_n.jpg"
             alt="GIF"
+            className="hero-img"
           />
         </div>
       </section>

@@ -82,12 +82,82 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-p span {
+span {
   transition: transform 0.3s ease-in-out;
   position: relative;
   display: inline-block;
 }
 
-p span:hover {
+span:hover {
   transform: translateY(-5px);
+}
+
+h4 {
+  text-align: center;
+}
+h4 span {
+  margin-bottom: 20px;
+}
+.arrow-container {
+  position: relative;
+  width: 50px;
+  height: 25px;
+}
+
+.arrow {
+  position: absolute;
+  filter: invert(7%) sepia(31%) saturate(1366%) hue-rotate(185deg)
+    brightness(98%) contrast(96%);
+  top: 0;
+  left: 0px; /* 初始位置在容器的左邊以外 */
+  width: 25px;
+  height: 20px;
+  animation: arrowAnimation 1.5s cubic-bezier(0.01, 0, 0.5, 1) infinite;
+}
+.arrow-dark {
+  position: absolute;
+  filter: invert(100%) sepia(1%) saturate(485%) hue-rotate(164deg)
+    brightness(117%) contrast(88%);
+  top: 0;
+  left: 0px; /* 初始位置在容器的左邊以外 */
+  width: 25px;
+  height: 20px;
+  animation: arrowAnimation 1.5s cubic-bezier(0.01, 0, 0.5, 1) infinite;
+}
+@keyframes arrowAnimation {
+  0% {
+    left: 10px; /* 開始位置在容器的左邊以外 */
+  }
+  50% {
+    left: 25px; /* 中間位置在容器的右邊以外 */
+  }
+  100% {
+    left: 10px; /* 結束位置在容器的左邊以外 */
+  }
+}
+
+.link {
+  width: 50%;
+  display: flex;
+  color: var(--textColor);
+  position: relative;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  text-decoration: none; /* 移除初始的底線 */
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 5px;
+  width: 100%;
+  height: 1px;
+  background-color: var(--textColor);
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out; /* 底線的動畫過渡效果 */
+}
+
+.link:hover::after {
+  transform: scaleX(1); /* 在 :hover 狀態下顯示底線 */
 }

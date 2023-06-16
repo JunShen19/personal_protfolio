@@ -38,7 +38,7 @@ const Wrapper = styled.div`
   .project h4 {
     text-align: center;
     margin-left: 1rem;
-    color: var(--textColor);
+    color: var(--grey-900);
   }
 
   @media (min-width: 768px) {

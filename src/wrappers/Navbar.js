@@ -10,12 +10,6 @@ const Wrapper = styled.nav`
     flex-direction: column;
     padding: 1.5rem 2rem;
   }
-  .logo {
-    font-size: clamp(1.5rem, 3vw, 3rem);
-    color: var(--textColor);
-    font-weight: 700;
-    letter-spacing: 2px;
-  }
   .nav-links {
     display: flex;
     flex-direction: column;
@@ -27,12 +21,36 @@ const Wrapper = styled.nav`
     padding: 0.5rem 0.5rem 0.5rem 0;
     transition: var(--transition);
     letter-spacing: 1px;
+    position: relative;
+    text-decoration: none;
   }
-  .nav-link:hover {
-    /* color: var(--primary-500); */
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    width: 100%;
+    height: 1px;
+    background-color: var(--textColor);
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out; /* 底線的動畫過渡效果 */
+  }
+  .nav-img {
+    border-radius: 50%;
+    position: absolute;
+    top: -25px;
+    left: -25px;
+    margin: auto;
+    height: 100px;
+    width: 100px;
+    /* max-width: 100%; */
+    box-shadow: var(--shadow-1);
+  }
+  .nav-link:hover::after {
+    transform: scaleX(1); /* 在 :hover 狀態下顯示底線 */
   }
   .active {
-    /* color: var(--primary-500); */
+    margin-top: 10px;
   }
   .dark-toggle {
     background: transparent;

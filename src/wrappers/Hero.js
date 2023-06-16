@@ -8,10 +8,10 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: space-between;
   }
-  .hero-link {
-    color: var(--textColor);
-    transition: var(--transition);
+  .hero-content {
+    width: 70%;
   }
+
   .container {
     margin-top: 2rem;
     margin-right: 2rem;
@@ -21,13 +21,13 @@ const Wrapper = styled.div`
     overflow: hidden;
     border-radius: 50%;
   }
-  img {
+  .hero-img {
     position: absolute;
     top: -25px;
-    left: -25px;
+    left: -150px;
     margin: auto;
     height: 200px;
-    width: 200px;
+    width: 400px;
     /* max-width: 100%; */
     box-shadow: var(--shadow-1);
   }

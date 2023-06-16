@@ -2,17 +2,55 @@ import React from "react";
 import Wrappers from "../wrappers/Test";
 import Education from "../components/Education";
 import Skills from "../components/Skills";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
+import { useGlobalContext } from "../context";
 const About = () => {
+  const { isDarkTheme, toggleDarkTheme } = useGlobalContext();
+
   return (
     <Wrappers>
       <section className="about">
         <div className="about-content">
           <h2>About Me.</h2>
-          <p>這裡是關於我的詳細介紹，包括我的背景、技能和經驗等。</p>
+          <h4>
+            <span>
+              I am a graduate from the Civil Engineering Department at National
+              Central University.
+            </span>
+            <span>
+              Through internships and self-exploration, I discovered my interest
+              in programming.
+            </span>
+            <span>
+              Therefore, starting from my junior year, I began to study various
+              subjects and gain knowledge in the field of computer science.
+            </span>
+            <span>
+              Fortunately, I was able to pursue a Master's degree in Computer
+              Science upon graduating.
+            </span>
+            <span>
+              During my Master's program, I focused my research on areas such as
+              deep learning, machine learning, and data processing. I dedicated
+              my time to studying and gaining expertise in these fields.
+            </span>{" "}
+            <span>
+              Recently, I have also developed an interest in frontend
+              development and have been actively learning in this area.
+            </span>
+          </h4>
         </div>
         <Education />
         <Skills />
+        <Link to="/portfolio" className="link">
+          Let's Continue To Projects.
+          <div className="arrow-container">
+            <img
+              src="src\assets\arrow-right-svgrepo-com.svg"
+              className={isDarkTheme ? "arrow-dark" : "arrow"}
+            ></img>
+          </div>
+        </Link>
       </section>
       <Outlet />
     </Wrappers>
