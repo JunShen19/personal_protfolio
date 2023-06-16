@@ -16,6 +16,12 @@ const Wrapper = styled.nav`
     gap: 0.5rem;
     margin-top: 1rem;
   }
+  .nav-links-show {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
   .nav-link {
     color: var(--textColor);
     padding: 0.5rem 0.5rem 0.5rem 0;
@@ -49,6 +55,14 @@ const Wrapper = styled.nav`
   .nav-link:hover::after {
     transform: scaleX(1); /* 在 :hover 狀態下顯示底線 */
   }
+  .menu-btn {
+    display: none;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    font-size: 1.5rem;
+    color: var(--textColor);
+  }
   .active {
     margin-top: 10px;
   }
@@ -74,6 +88,29 @@ const Wrapper = styled.nav`
     .nav-links {
       flex-direction: row;
       margin-top: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .nav-link {
+      text-align: center;
+    }
+    .nav-links {
+      display: none;
+    }
+    .nav-links-show {
+      /* display: block; */
+      columns: 1;
+      -webkit-columns: 1;
+      -moz-columns: 1;
+    }
+    .btn-container {
+      display: flex;
+      justify-content: flex-end;
+    }
+    .menu-btn {
+      display: inline-block;
+      margin-right: 1rem;
     }
   }
 `;

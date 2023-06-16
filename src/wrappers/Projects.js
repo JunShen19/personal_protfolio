@@ -13,7 +13,7 @@ const Wrapper = styled.div`
     background: var(--white);
     display: inline-block;
     width: 100%; /* 填滿父元素的寬度 */
-    height: 30rem; /* 填滿父元素的高度 */
+    height: 10rem; /* 填滿父元素的高度 */
     border-radius: var(--borderRadius);
     box-shadow: var(--shadow-2);
     transition: var(--transition);
@@ -41,14 +41,10 @@ const Wrapper = styled.div`
     color: var(--grey-900);
   }
 
-  @media (min-width: 768px) {
+  @media (max-width: 768px) {
     .projects-center {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-  @media (min-width: 992px) {
-    .projects-center {
-      /* grid-template-columns: 1fr 1fr 1fr; */
+      grid-template-columns: 1fr;
+      gap: 1rem;
     }
   }
 `;

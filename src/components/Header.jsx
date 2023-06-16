@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import Wrapper from "../wrappers/Navbar";
 import { useGlobalContext } from "../context";
 import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs";
+import { FaBars } from "react-icons/fa";
 
 const Header = () => {
   const { isDarkTheme, toggleDarkTheme } = useGlobalContext();
-
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuToggle = () => {
+    if (window.innerWidth < 768) {
+      setIsMenuOpen(!isMenuOpen);
+    }
+  };
   return (
     <Wrapper>
       <div className="nav-center">
@@ -17,17 +23,22 @@ const Header = () => {
             className="nav-img"
           />
         </span>
-        <div className="nav-links">
-          <NavLink to="/" className="nav-link">
+        <div className="btn-container">
+          <button className="menu-btn" onClick={menuToggle}>
+            <FaBars />
+          </button>
+        </div>
+        <div className={isMenuOpen ? "nav-links-show" : "nav-links"}>
+          <NavLink to="/" className="nav-link" onClick={menuToggle}>
             Home.
           </NavLink>
-          <NavLink to="/about" className="nav-link">
+          <NavLink to="/about" className="nav-link" onClick={menuToggle}>
             About Me.
           </NavLink>
-          <NavLink to="/portfolio" className="nav-link">
+          <NavLink to="/portfolio" className="nav-link" onClick={menuToggle}>
             Portfolio.
           </NavLink>
-          <NavLink to="/contact" className="nav-link">
+          <NavLink to="/contact" className="nav-link" onClick={menuToggle}>
             Contact Me.
           </NavLink>
           <button className="dark-toggle" onClick={toggleDarkTheme}>

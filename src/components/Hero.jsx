@@ -10,17 +10,26 @@ const Hero = () => {
     <Wrapper>
       <section className="hero">
         <div className="hero-content">
-          <h1>
-            <span>Hello!</span>
-            <span>&nbsp;</span>
-            <span>I'm</span>
-            <span>&nbsp;</span>
-            <span>Jun-Shen,</span>
-            <span>&nbsp;</span>
-            <span>Lin.</span>
-          </h1>
+          <div className="hero-title">
+            <h1>
+              <span>Hello!</span>
+              <span>&nbsp;</span>
+              <span>I'm</span>
+              <span>&nbsp;</span>
+              <span>Jun-Shen,</span>
+              <span>&nbsp;</span>
+              <span>Lin.</span>
+            </h1>
+            <div className="container">
+              <img
+                src="src\assets\352116640_596434332307557_5285434189639619787_n.jpg"
+                alt="GIF"
+                className="hero-img"
+              />
+            </div>
+          </div>
           <h4>
-            <span>I</span>
+            <span>I'm</span>
             <span>&nbsp;</span>
             <span>a</span>
             <span>&nbsp;</span>
@@ -157,13 +166,6 @@ const Hero = () => {
               ></img>
             </div>
           </Link>
-        </div>
-        <div className="container">
-          <img
-            src="src\assets\352116640_596434332307557_5285434189639619787_n.jpg"
-            alt="GIF"
-            className="hero-img"
-          />
         </div>
       </section>
       <Outlet />
