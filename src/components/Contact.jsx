@@ -3,6 +3,8 @@ import Wrappers from "../wrappers/Contact";
 import { Link, Outlet } from "react-router-dom";
 import { useGlobalContext } from "../context";
 import pdf from "../assets/resume.pdf";
+import arrowIcon from "../assets/arrow-right-svgrepo-com.svg";
+
 const Contact = () => {
   const { isDarkTheme, toggleDarkTheme } = useGlobalContext();
 
@@ -20,7 +22,7 @@ const Contact = () => {
         Go Back Home.
         <div className="arrow-container">
           <img
-            src="src\assets\arrow-right-svgrepo-com.svg"
+            src={arrowIcon}
             className={isDarkTheme ? "arrow-dark" : "arrow"}
           ></img>
         </div>

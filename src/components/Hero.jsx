@@ -3,6 +3,8 @@ import Wrapper from "../wrappers/Hero";
 import { Link, Outlet } from "react-router-dom";
 import { useGlobalContext } from "../context";
 import pic from "../assets/myPicture.jpg";
+import arrowIcon from "../assets/arrow-right-svgrepo-com.svg";
+
 const Hero = () => {
   const { isDarkTheme, toggleDarkTheme } = useGlobalContext();
 
@@ -157,7 +159,7 @@ const Hero = () => {
             See More About Me.
             <div className="arrow-container">
               <img
-                src="src\assets\arrow-right-svgrepo-com.svg"
+                src={arrowIcon}
                 className={isDarkTheme ? "arrow-dark" : "arrow"}
               ></img>
             </div>

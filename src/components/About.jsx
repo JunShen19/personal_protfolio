@@ -4,6 +4,8 @@ import Education from "../components/Education";
 import Skills from "../components/Skills";
 import { Link, Outlet } from "react-router-dom";
 import { useGlobalContext } from "../context";
+import arrowIcon from "../assets/arrow-right-svgrepo-com.svg";
+
 const About = () => {
   const { isDarkTheme, toggleDarkTheme } = useGlobalContext();
 
@@ -46,7 +48,7 @@ const About = () => {
           Let's Continue To Projects.
           <div className="arrow-container">
             <img
-              src="src\assets\arrow-right-svgrepo-com.svg"
+              src={arrowIcon}
               className={isDarkTheme ? "arrow-dark" : "arrow"}
             ></img>
           </div>

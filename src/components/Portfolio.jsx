@@ -3,6 +3,7 @@ import { useFetchProjects } from "../fetchProjects";
 import Wrapper from "../wrappers/Projects";
 import { Link, Outlet } from "react-router-dom";
 import { useGlobalContext } from "../context";
+import arrowIcon from "../assets/arrow-right-svgrepo-com.svg";
 const Projects = () => {
   const { isDarkTheme, toggleDarkTheme } = useGlobalContext();
 
@@ -48,7 +49,7 @@ const Projects = () => {
         Lets Go To My Resume.
         <div className="arrow-container">
           <img
-            src="src\assets\arrow-right-svgrepo-com.svg"
+            src={arrowIcon}
             className={isDarkTheme ? "arrow-dark" : "arrow"}
           ></img>
         </div>
