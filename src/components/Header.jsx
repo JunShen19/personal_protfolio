@@ -4,7 +4,7 @@ import Wrapper from "../wrappers/Navbar";
 import { useGlobalContext } from "../context";
 import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs";
 import { FaBars } from "react-icons/fa";
-
+import logoImg from "../assets/351741950_674181357871776_2986008095918627020_n.jpg";
 const Header = () => {
   const { isDarkTheme, toggleDarkTheme } = useGlobalContext();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,11 +17,7 @@ const Header = () => {
     <Wrapper>
       <div className="nav-center">
         <span className="logo">
-          <img
-            src="src\assets\352407633_228095676748173_1386981355860839164_n.gif"
-            alt="GIF"
-            className="nav-img"
-          />
+          <img src={logoImg} alt="GIF" className="nav-img" />
         </span>
         <div className="btn-container">
           <button className="menu-btn" onClick={menuToggle}>

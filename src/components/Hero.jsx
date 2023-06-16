@@ -22,7 +22,7 @@ const Hero = () => {
             </h1>
             <div className="container">
               <img
-                src="src\assets\352116640_596434332307557_5285434189639619787_n.jpg"
+                src="src\assets\myPicture.jpg"
                 alt="GIF"
                 className="hero-img"
               />
