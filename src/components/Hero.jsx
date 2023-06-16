@@ -2,7 +2,7 @@ import React from "react";
 import Wrapper from "../wrappers/Hero";
 import { Link, Outlet } from "react-router-dom";
 import { useGlobalContext } from "../context";
-
+import { pic } from "../assets/myPicture.jpg";
 const Hero = () => {
   const { isDarkTheme, toggleDarkTheme } = useGlobalContext();
 
@@ -21,11 +21,7 @@ const Hero = () => {
               <span>Lin.</span>
             </h1>
             <div className="container">
-              <img
-                src="src\assets\myPicture.jpg"
-                alt="GIF"
-                className="hero-img"
-              />
+              <img src={pic} alt="GIF" className="hero-img" />
             </div>
           </div>
           <h4>
