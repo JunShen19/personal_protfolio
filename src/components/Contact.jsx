@@ -2,7 +2,7 @@ import React from "react";
 import Wrappers from "../wrappers/Contact";
 import { Link, Outlet } from "react-router-dom";
 import { useGlobalContext } from "../context";
-import { pdf } from "../assets/resume.pdf";
+import pdf from "../assets/resume.pdf";
 const Contact = () => {
   const { isDarkTheme, toggleDarkTheme } = useGlobalContext();
 

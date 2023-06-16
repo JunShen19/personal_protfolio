@@ -2,7 +2,7 @@ import React from "react";
 import Wrapper from "../wrappers/Hero";
 import { Link, Outlet } from "react-router-dom";
 import { useGlobalContext } from "../context";
-import { pic } from "../assets/myPicture.jpg";
+import pic from "../assets/myPicture.jpg";
 const Hero = () => {
   const { isDarkTheme, toggleDarkTheme } = useGlobalContext();
 
