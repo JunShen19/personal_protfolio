@@ -5,7 +5,6 @@ const Wrapper = styled.nav`
   .nav-center {
     width: var(--view-width);
     max-width: var(--max-width);
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
     padding: 1.5rem 2rem;
@@ -92,6 +91,25 @@ const Wrapper = styled.nav`
   }
 
   @media (max-width: 768px) {
+    .nav-center {
+      width: var(--view-width);
+      max-width: var(--max-width);
+      display: flex;
+      flex-direction: column;
+      padding: 0rem;
+      margin-top: 2rem;
+    }
+    .nav-img {
+      border-radius: 50%;
+      position: absolute;
+      top: -1rem;
+      left: 0rem;
+      margin: auto;
+      height: 100px;
+      width: 100px;
+      /* max-width: 100%; */
+      box-shadow: var(--shadow-1);
+    }
     .nav-link {
       text-align: center;
     }
@@ -99,7 +117,6 @@ const Wrapper = styled.nav`
       display: none;
     }
     .nav-links-show {
-      /* display: block; */
       columns: 1;
       -webkit-columns: 1;
       -moz-columns: 1;

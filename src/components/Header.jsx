@@ -37,14 +37,14 @@ const Header = () => {
           <NavLink to="/contact" className="nav-link" onClick={menuToggle}>
             Contact Me.
           </NavLink>
-          <button className="dark-toggle" onClick={toggleDarkTheme}>
-            {isDarkTheme ? (
-              <BsFillMoonFill className="toggle-icon" />
-            ) : (
-              <BsFillSunFill className="toggle-icon" />
-            )}
-          </button>
         </div>
+        <button className="dark-toggle" onClick={toggleDarkTheme}>
+          {isDarkTheme ? (
+            <BsFillMoonFill className="toggle-icon" />
+          ) : (
+            <BsFillSunFill className="toggle-icon" />
+          )}
+        </button>
       </div>
     </Wrapper>
   );

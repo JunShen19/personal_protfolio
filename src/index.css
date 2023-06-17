@@ -161,3 +161,9 @@ h4 span {
 .link:hover::after {
   transform: scaleX(1); /* 在 :hover 狀態下顯示底線 */
 }
+
+@media (max-width: 768px) {
+  .link {
+    width: 100%;
+  }
+}

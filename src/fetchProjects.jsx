@@ -18,7 +18,6 @@ export const useFetchProjects = () => {
         console.log(item);
         const { title, url, images } = item.fields;
         const id = item.sys.id;
-        console.log(images);
         const img = images?.fields?.file?.url;
         return { title, url, id, img };
       });

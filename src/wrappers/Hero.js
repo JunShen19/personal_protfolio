@@ -42,7 +42,7 @@ const Wrapper = styled.div`
   @media (max-width: 768px) {
     .container {
       margin-top: 0rem;
-      margin-right: 0rem;
+      margin-left: 8rem;
       width: 150px;
       height: 150px;
       position: relative;
@@ -58,6 +58,13 @@ const Wrapper = styled.div`
       width: 400px;
       /* max-width: 100%; */
       box-shadow: var(--shadow-1);
+    }
+    .hero-title {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+    .hero-title h1 {
+      width: 100%;
     }
   }
 `;
