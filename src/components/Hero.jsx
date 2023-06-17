@@ -128,9 +128,9 @@ const Hero = () => {
             <span>&nbsp;</span>
             <span>am</span>
             <span>&nbsp;</span>
-            <span>busy</span>
+            <span>concentrate</span>
             <span>&nbsp;</span>
-            <span>with</span>
+            <span>on</span>
             <span>&nbsp;</span>
             <span>my</span>
             <span>&nbsp;</span>
