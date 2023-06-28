@@ -12,7 +12,7 @@ const Skills = () => {
             <li className="skill">CSS</li>
             <li className="skill">JavaScript</li>
             <li className="skill">React</li>
-            <li className="skill">Node.js</li>
+            {/* <li className="skill">Node.js</li> */}
             <li className="skill">Python</li>
             <li className="skill">Deep Learning</li>
             <li className="skill">Pandas</li>
