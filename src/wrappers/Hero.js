@@ -31,10 +31,9 @@ const Wrapper = styled.div`
   .hero-img {
     position: absolute;
     top: -25px;
-    left: -150px;
-    margin: auto;
+    left: -50px;
     height: 200px;
-    width: 400px;
+    width: 200px;
     /* max-width: 100%; */
     box-shadow: var(--shadow-1);
   }
@@ -52,11 +51,10 @@ const Wrapper = styled.div`
     .hero-img {
       position: absolute;
       top: -25px;
-      left: -150px;
+      left: -50px;
       margin: auto;
       height: 200px;
-      width: 400px;
-      /* max-width: 100%; */
+      width: 200px;
       box-shadow: var(--shadow-1);
     }
     .hero-title {
