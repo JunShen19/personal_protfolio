@@ -1,169 +1,23 @@
-:root {
-  /* grey */
-  --grey-50: #f8fafc;
-  --grey-100: #f1f5f9;
-  --grey-200: #e2e8f0;
-  --grey-300: #cbd5e1;
-  --grey-400: #94a3b8;
-  --grey-500: #64748b;
-  --grey-600: #475569;
-  --grey-700: #334155;
-  --grey-800: #1e293b;
-  --grey-900: #0f172a;
-  /* colors */
-  --primary-100: #e2e0ff;
-  --primary-200: #c1beff;
-  --primary-300: #a29dff;
-  --primary-400: #837dff;
-  --primary-500: #645cff;
-  --primary-600: #504acc;
-  --primary-700: #3c3799;
-  --primary-800: #282566;
-  --primary-900: #141233;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  /* grey */
-  --grey-50: #f8fafc;
-  --grey-100: #f1f5f9;
-  --grey-200: #e2e8f0;
-  --grey-300: #cbd5e1;
-  --grey-400: #94a3b8;
-  --grey-500: #64748b;
-  --grey-600: #475569;
-  --grey-700: #334155;
-  --grey-800: #1e293b;
-  --grey-900: #0f172a;
-  /* rest of the colors */
-  --black: #222;
-  --white: #fff;
-  --red-light: #f8d7da;
-  --red-dark: #842029;
-  --green-light: #d1e7dd;
-  --green-dark: #0f5132;
-
-  --small-text: 0.875rem;
-  --extra-small-text: 0.7em;
-  /* rest of the vars */
-  --borderRadius: 0.25rem;
-  --letterSpacing: 1px;
-  --transition: 0.3s ease-in-out all;
-  --max-width: 1120px;
-  --fixed-width: 600px;
-  --view-width: 90vw;
-  /* box shadow*/
-  --shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-  --shadow-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-    0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  --dark-mode-bg-color: #333;
-  --dark-mode-text-color: #f0f0f0;
-  --backgroundColor: var(--grey-50);
-  --textColor: var(--grey-900);
-  --darkModeTransition: color 0.3s ease-in-out,
-    background-color 0.3s ease-in-out;
-}
-.dark-theme {
-  --textColor: var(--dark-mode-text-color);
-  --backgroundColor: var(--dark-mode-bg-color);
+.btn {
+  @apply rounded-full;
 }
 
-body {
-  background: var(--backgroundColor);
-  color: var(--textColor);
-  transition: var(--darkModeTransition);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  line-height: 1.5;
-  font-size: 0.875rem;
-}
-body::-webkit-scrollbar {
-  display: none;
-}
-
-span {
-  transition: transform 0.3s ease-in-out;
-  position: relative;
-  display: inline-block;
-}
-
-span:hover {
-  transform: translateY(-5px);
-}
-
-h4 {
-  text-align: center;
-}
-h4 span {
-  margin-bottom: 20px;
-}
-.arrow-container {
-  position: relative;
-  width: 50px;
-  height: 25px;
-}
-
-.arrow {
-  position: absolute;
-  filter: invert(7%) sepia(31%) saturate(1366%) hue-rotate(185deg)
-    brightness(98%) contrast(96%);
-  top: 0;
-  left: 0px; /* 初始位置在容器的左邊以外 */
-  width: 25px;
-  height: 20px;
-  animation: arrowAnimation 1.5s cubic-bezier(0.01, 0, 0.5, 1) infinite;
-}
-.arrow-dark {
-  position: absolute;
-  filter: invert(100%) sepia(1%) saturate(485%) hue-rotate(164deg)
-    brightness(117%) contrast(88%);
-  top: 0;
-  left: 0px; /* 初始位置在容器的左邊以外 */
-  width: 25px;
-  height: 20px;
-  animation: arrowAnimation 1.5s cubic-bezier(0.01, 0, 0.5, 1) infinite;
-}
-@keyframes arrowAnimation {
-  0% {
-    left: 10px; /* 開始位置在容器的左邊以外 */
+@layer base {
+  h1 {
+    @apply font-bold;
   }
-  50% {
-    left: 25px; /* 中間位置在容器的右邊以外 */
+  h2 {
+    @apply my-2;
   }
-  100% {
-    left: 10px; /* 結束位置在容器的左邊以外 */
+  section {
+    @apply max-h-screen bg-base-200 flex justify-center items-center flex-col;
   }
 }
 
-.link {
-  width: 50%;
-  display: flex;
-  color: var(--textColor);
-  position: relative;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
-  text-decoration: none; /* 移除初始的底線 */
-}
-
-.link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 5px;
-  width: 100%;
-  height: 1px;
-  background-color: var(--textColor);
-  transform: scaleX(0);
-  transition: transform 0.3s ease-in-out; /* 底線的動畫過渡效果 */
-}
-
-.link:hover::after {
-  transform: scaleX(1); /* 在 :hover 狀態下顯示底線 */
-}
-
-@media (max-width: 768px) {
-  .link {
-    width: 100%;
-  }
+* {
+  font-family: sans-serif;
 }

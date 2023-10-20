@@ -6,23 +6,21 @@ import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Wrapper from "./wrappers/Layout";
+// import Wrapper from "./wrappers/Layout";
 import { ScrollToTop } from "./ScrollToTop";
 const App = () => {
   return (
-    <>
+    <div data-theme="dark">
       <Header />
-      <Wrapper>
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Hero />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-        <Footer />
-      </Wrapper>
-    </>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<Hero />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+      <Footer />
+    </div>
   );
 };
 

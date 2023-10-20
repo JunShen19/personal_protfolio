@@ -1,26 +1,35 @@
 import React from "react";
-import Wrapper from "../wrappers/Skills";
 
 const Skills = () => {
   return (
-    <Wrapper>
-      <section className="skills">
-        <div className="skills-content">
-          <h2>My Skills</h2>
-          <ul className="skills-list">
-            <li className="skill">HTML</li>
-            <li className="skill">CSS</li>
-            <li className="skill">JavaScript</li>
-            <li className="skill">React</li>
-            {/* <li className="skill">Node.js</li> */}
-            <li className="skill">Python</li>
-            <li className="skill">Deep Learning</li>
-            <li className="skill">Pandas</li>
-            <li className="skill">Numpy</li>
-          </ul>
-        </div>
-      </section>
-    </Wrapper>
+    <div className="card w-1/3 bg-base-100 shadow-xl m-6 p-6">
+      <h1>My Skills</h1>
+      <h2>Programming</h2>
+      <div className="flex gap-2">
+        <button class="btn-xs btn btn-neutral">Python</button>
+        <button class="btn-xs btn btn-neutral">JavaScript</button>
+      </div>
+      <h2>Frontend</h2>
+      <div className="flex flex-wrap gap-2">
+        <button class="btn-xs btn btn-neutral">JavaScript</button>
+        <button class="btn-xs btn btn-neutral">HTML</button>
+        <button class="btn-xs btn btn-neutral">CSS</button>
+        <button class="btn-xs btn btn-neutral">React.js</button>
+        <button class="btn-xs btn btn-neutral">Tailwind CSS</button>
+      </div>
+      <h2>Backend</h2>
+      <div className="flex flex-wrap gap-2">
+        <button class="btn-xs btn btn-neutral">Node.js</button>
+        <button class="btn-xs btn btn-neutral">PostgreSQL</button>
+        <button class="btn-xs btn btn-neutral">MongoDB</button>
+        <button class="btn-xs btn btn-neutral">Python flask</button>
+      </div>
+      <h2>ML/DL</h2>
+      <div className="flex gap-2">
+        <button class="btn-xs btn btn-neutral">Keras</button>
+        <button class="btn-xs btn btn-neutral">Scikit-learn</button>
+      </div>
+    </div>
   );
 };
 
