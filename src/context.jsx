@@ -16,23 +16,15 @@ export const AppProvider = ({ children }) => {
 
   const toggleDarkTheme = () => {
     const newDarkTheme = !isDarkTheme;
+    console.log(newDarkTheme);
     setIsDarkTheme(newDarkTheme);
     localStorage.setItem("darkTheme", newDarkTheme);
-  };
-
-  const getNavbarHeight = () => {
-    const navbar = document.getElementById("navbar");
-    if (navbar) {
-      const height = navbar.offsetHeight;
-      setNavbarHeight(height);
-    }
   };
 
   useEffect(() => {
     const navbar = document.getElementById("navbar");
     if (navbar) {
       const height = navbar.offsetHeight;
-      console.log(height);
       setNavbarHeight(height);
     }
   }, []);

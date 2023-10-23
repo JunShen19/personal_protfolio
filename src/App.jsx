@@ -3,16 +3,17 @@ import Hero from "./components/Hero";
 import { Routes, Route } from "react-router-dom";
 import About from "./components/About";
 import Portfolio from "./components/Portfolio";
+import { useGlobalContext } from "./context";
 import Contact from "./components/Contact";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-// import Wrapper from "./wrappers/Layout";
-import { ScrollToTop } from "./ScrollToTop";
+
 const App = () => {
+  const { isDarkTheme, toggleDarkTheme } = useGlobalContext();
   return (
-    <div data-theme="dark">
+    <div data-theme={isDarkTheme ? `dark` : `garden`}>
+      {/* <div data-theme="dark"> */}
       <Header />
-      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Hero />} />
         <Route path="/about" element={<About />} />

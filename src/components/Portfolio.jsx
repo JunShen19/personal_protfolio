@@ -31,7 +31,7 @@ const Projects = () => {
           {projects.map((project) => {
             const { id, title, url, img } = project;
             return (
-              <div>
+              <div key={id}>
                 <div className="badge badge-info gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -96,7 +96,7 @@ const Projects = () => {
                   </svg>
                   error
                 </div>
-                <a key={id} href={url} target="_blank" rel="noreferrer">
+                <a href={url} target="_blank" rel="noreferrer">
                   <div className="mockup-browser border border-base-300">
                     <div className="mockup-browser-toolbar absolute z-10">
                       <div className="input">{url}</div>

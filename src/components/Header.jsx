@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useGlobalContext } from "../context";
 import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs";
-import logoImg from "../assets/352407633_228095676748173_1386981355860839164_n.gif";
+
 const Header = () => {
   const { isDarkTheme, toggleDarkTheme } = useGlobalContext();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,9 +13,6 @@ const Header = () => {
   };
   return (
     <div className="navbar bg-base-100" id="navbar">
-      {/* <span className="logo">
-        <img src={logoImg} alt="GIF" className="nav-img" />
-      </span> */}
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex="0" className="btn btn-ghost lg:hidden">
@@ -87,14 +84,18 @@ const Header = () => {
           </li>
         </ul>
       </div>
-      <div className="navbar-end">
-        <button className="btn dark-toggle" onClick={toggleDarkTheme}>
-          {isDarkTheme ? (
-            <BsFillMoonFill className="toggle-icon" />
-          ) : (
-            <BsFillSunFill className="toggle-icon" />
-          )}
-        </button>
+      <div className="navbar-end relative mr-4">
+        <input
+          type="checkbox"
+          className="toggle toggle-md"
+          checked={isDarkTheme}
+          onChange={toggleDarkTheme}
+        />
+        {isDarkTheme ? (
+          <BsFillMoonFill className="absolute mr-6 " />
+        ) : (
+          <BsFillSunFill className="absolute mr-1" />
+        )}
       </div>
     </div>
   );
