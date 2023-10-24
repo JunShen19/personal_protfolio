@@ -28,13 +28,13 @@ const Projects = () => {
           height: `calc(100vh - ${navbarHeight}px - ${navbarHeight}px)`,
         }}
       >
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-3 p-4 mx-20">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3 mx-20">
           {projects.map((project) => {
             const { id, title, url, img, tags } = project;
             return (
               <div key={id} className="flex flex-col-reverse">
-                <div className="flex flex-col gap-2">
-                  <div className="flex gap-2 flex-wrap">
+                <div className="flex flex-col">
+                  <div className="flex gap-2 flex-wrap p-2">
                     {tags.map((tag, index) => {
                       return <Tags tag={tag.toUpperCase()} type={index} />;
                     })}
