@@ -11,7 +11,7 @@ import Footer from "./components/Footer";
 const App = () => {
   const { isDarkTheme, toggleDarkTheme } = useGlobalContext();
   return (
-    <div data-theme={isDarkTheme ? `dark` : `garden`}>
+    <div data-theme={isDarkTheme ? `dark` : `wireframe`}>
       {/* <div data-theme="dark"> */}
       <Header />
       <Routes>
