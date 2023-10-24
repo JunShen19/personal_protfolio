@@ -15,11 +15,14 @@ export const useFetchProjects = () => {
     try {
       const response = await client.getEntries({ content_type: "projects" });
       const projects = response.items.map((item) => {
-        // console.log(item);
         const { title, url, images } = item.fields;
         const id = item.sys.id;
         const img = images?.fields?.file?.url;
-        return { title, url, id, img };
+        const tags = item.metadata.tags.map((tag) => {
+          return tag.sys.id;
+        });
+        console.log({ title, url, id, img, tags });
+        return { title, url, id, img, tags };
       });
 
       setProjects(projects);

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { useGlobalContext } from "../context";
-import pdf from "../assets/resume.pdf";
+import pdf from "../assets/pdf_for_portfolio.pdf";
 import logoImg from "../assets/duck_contact.gif";
 import axios from "axios";
 
 const Contact = () => {
-  const { isDarkTheme, toggleDarkTheme, navbarHeight } = useGlobalContext();
+  const { navbarHeight } = useGlobalContext();
   const [data, setData] = useState({ text: "", email: "", textarea: "" });
 
   const handleInputChange = (e) => {
