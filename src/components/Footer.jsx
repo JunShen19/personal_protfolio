@@ -15,7 +15,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="footer items-center p-4 bg-base-100 text-neutral-content flex justify-center gap-16">
+    <footer className="footer items-center p-4 bg-base-100 text-neutral-content flex justify-between md:justify-center md:gap-16 md:absolute md:bottom-0">
       <div className="grid-flow-col gap-4">
         <a href="https://github.com/JunShen19">
           <svg

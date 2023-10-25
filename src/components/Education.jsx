@@ -6,7 +6,7 @@ const Education = () => {
       <div className="card w-auto bg-base-100 shadow-xl m-6 p-6">
         <h1>Education</h1>
         <ul className="steps steps-vertical">
-          <li data-content="😚" className="step step-success flex">
+          <li data-content="😚" className="step step-success flex z-10">
             <div className="w-56">
               <p className="text-left">Graduated from FSSH.</p>
               <p className="text-right">Jul, 2017</p>

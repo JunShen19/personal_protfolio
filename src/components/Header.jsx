@@ -60,7 +60,7 @@ const Header = () => {
         <a className="btn btn-ghost normal-case text-xl">Jun-Shen</a>
       </div>
 
-      <div className="navbar-center hidden lg:flex">
+      <div className="navbar-center hidden z-30 lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
             <NavLink to="/" onClick={menuToggle}>

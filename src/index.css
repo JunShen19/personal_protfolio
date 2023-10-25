@@ -13,9 +13,9 @@
   h2 {
     @apply my-2;
   }
-  section {
+  /* section {
     @apply max-h-screen bg-base-200 flex justify-center items-center flex-col;
-  }
+  } */
 }
 
 * {

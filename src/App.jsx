@@ -11,15 +11,23 @@ import Footer from "./components/Footer";
 const App = () => {
   const { isDarkTheme, toggleDarkTheme } = useGlobalContext();
   return (
-    <div data-theme={isDarkTheme ? `dark` : `wireframe`}>
+    <div
+      data-theme={isDarkTheme ? `dark` : `wireframe`}
+      // className="flex-col justify-between"
+    >
       {/* <div data-theme="dark"> */}
-      <Header />
-      <Routes>
-        <Route path="/" element={<Hero />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
+      <div className="relative z-40">
+        <Header />
+      </div>
+
+      <div className="relative z-10">
+        <Routes>
+          <Route path="/" element={<Hero />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </div>
       <Footer />
     </div>
   );

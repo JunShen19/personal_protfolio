@@ -2,7 +2,7 @@ import React from "react";
 
 const Skills = () => {
   return (
-    <div className="card w-1/3 bg-base-100 shadow-xl m-6 p-6">
+    <div className="card md:w-1/3 bg-base-100 shadow-xl m-6 p-6">
       <h1>My Skills</h1>
       <h2>Programming</h2>
       <div className="flex gap-2">

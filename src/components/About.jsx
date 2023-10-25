@@ -9,20 +9,20 @@ const About = () => {
 
   return (
     <section
-      className="max-h-screen bg-base-200 flex justify-center items-center flex-col"
+      className="bg-base-200 overflow-auto"
       style={{
-        height: `calc(100vh - ${navbarHeight}px - ${navbarHeight}px)`,
+        height: `calc(100vh - ${navbarHeight}px - ${navbarHeight}px + 1rem)`,
       }}
     >
-      <div className="flex justify-center">
+      <div className="flex flex-col items-center md:flex-row justify-center">
         <Education />
         <Skills />
+        <Link to="/portfolio">
+          <button className="mb-4 md:mb-0 md:absolute btn btn-primary md:-bottom-5 md:right-28">
+            Let's Continue To Projects.
+          </button>
+        </Link>
       </div>
-      <Link to="/portfolio">
-        <button className="absolute btn btn-primary bottom-10 right-28">
-          Let's Continue To Projects.
-        </button>
-      </Link>
       <Outlet />
     </section>
   );
