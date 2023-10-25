@@ -10,7 +10,7 @@ const Hero = () => {
 
   return (
     <section
-      className="bg-base-200 overflow-auto flex justify-center items-center flex-col"
+      className="bg-base-200 overflow-auto"
       style={{
         height: `calc(100vh - ${navbarHeight}px - ${navbarHeight}px + 1rem)`,
       }}
