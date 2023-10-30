@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import Wrapper from "../wrappers/Navbar";
 import { useGlobalContext } from "../context";
 import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs";
-import { FaBars } from "react-icons/fa";
-import logoImg from "../assets/352407633_228095676748173_1386981355860839164_n.gif";
+
 const Header = () => {
   const { isDarkTheme, toggleDarkTheme } = useGlobalContext();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,39 +12,92 @@ const Header = () => {
     }
   };
   return (
-    <Wrapper>
-      <div className="nav-center">
-        <span className="logo">
-          <img src={logoImg} alt="GIF" className="nav-img" />
-        </span>
-        <div className="btn-container">
-          <button className="menu-btn" onClick={menuToggle}>
-            <FaBars />
-          </button>
+    <div className="navbar bg-base-100" id="navbar">
+      <div className="navbar-start">
+        <div className="dropdown">
+          <label tabIndex="0" className="btn btn-ghost lg:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h8m-8 6h16"
+              />
+            </svg>
+          </label>
+          <ul
+            tabIndex="0"
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+          >
+            <li>
+              <NavLink to="/" onClick={menuToggle}>
+                Home.
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/about" onClick={menuToggle}>
+                About Me.
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/portfolio" onClick={menuToggle}>
+                Portfolio.
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/contact" onClick={menuToggle}>
+                Contact Me.
+              </NavLink>
+            </li>
+          </ul>
         </div>
-        <div className={isMenuOpen ? "nav-links-show" : "nav-links"}>
-          <NavLink to="/" className="nav-link" onClick={menuToggle}>
-            Home.
-          </NavLink>
-          <NavLink to="/about" className="nav-link" onClick={menuToggle}>
-            About Me.
-          </NavLink>
-          <NavLink to="/portfolio" className="nav-link" onClick={menuToggle}>
-            Portfolio.
-          </NavLink>
-          <NavLink to="/contact" className="nav-link" onClick={menuToggle}>
-            Contact Me.
-          </NavLink>
-        </div>
-        <button className="dark-toggle" onClick={toggleDarkTheme}>
-          {isDarkTheme ? (
-            <BsFillMoonFill className="toggle-icon" />
-          ) : (
-            <BsFillSunFill className="toggle-icon" />
-          )}
-        </button>
+        <a className="btn btn-ghost normal-case text-xl">Jun-Shen</a>
       </div>
-    </Wrapper>
+
+      <div className="navbar-center hidden z-30 lg:flex">
+        <ul className="menu menu-horizontal px-1">
+          <li>
+            <NavLink to="/" onClick={menuToggle}>
+              Home.
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/about" onClick={menuToggle}>
+              About Me.
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/portfolio" onClick={menuToggle}>
+              Portfolio.
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/contact" onClick={menuToggle}>
+              Contact Me.
+            </NavLink>
+          </li>
+        </ul>
+      </div>
+      <div className="navbar-end relative mr-4">
+        <input
+          type="checkbox"
+          className="toggle toggle-md"
+          checked={isDarkTheme}
+          onChange={toggleDarkTheme}
+        />
+        {isDarkTheme ? (
+          <BsFillMoonFill className="absolute mr-6 " />
+        ) : (
+          <BsFillSunFill className="absolute mr-1" />
+        )}
+      </div>
+    </div>
   );
 };
 

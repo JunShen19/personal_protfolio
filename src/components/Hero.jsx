@@ -1,173 +1,65 @@
 import React from "react";
-import Wrapper from "../wrappers/Hero";
 import { Link, Outlet } from "react-router-dom";
 import { useGlobalContext } from "../context";
 import pic from "../assets/myPicture.jpg";
-import arrowIcon from "../assets/arrow-right-svgrepo-com.svg";
+import pic_ from "../assets/1.jpg";
+import logoImg from "../assets/352407633_228095676748173_1386981355860839164_n.gif";
 
 const Hero = () => {
-  const { isDarkTheme, toggleDarkTheme } = useGlobalContext();
+  const { navbarHeight } = useGlobalContext();
 
   return (
-    <Wrapper>
-      <section className="hero">
-        <div className="hero-content">
-          <div className="hero-title">
-            <h1>
-              <span>Hello!</span>
-              <span>&nbsp;</span>
-              <span>I'm</span>
-              <span>&nbsp;</span>
-              <span>Jun-Shen,</span>
-              <span>&nbsp;</span>
-              <span>Lin.</span>
-            </h1>
-            <div className="container">
-              <img src={pic} alt="GIF" className="hero-img" />
-            </div>
+    <section
+      className="bg-base-200 overflow-auto"
+      style={{
+        height: `calc(100vh - ${navbarHeight}px - ${navbarHeight}px + 1rem)`,
+      }}
+    >
+      <div className="hero-content flex-col flex justify-center md:flex-row-reverse">
+        <div className="h-48 carousel carousel-vertical rounded-box bg-neutral space-y-4 p-4 md:h-96">
+          <div className="carousel-item">
+            <img
+              src={pic}
+              alt="img"
+              className="w-48 rounded-lg shadow-2xl rounded-box md:w-80"
+            />
           </div>
-          <h4>
-            <span>I'm</span>
-            <span>&nbsp;</span>
-            <span>a</span>
-            <span>&nbsp;</span>
-            <span>soon-to-be</span>
-            <span>&nbsp;</span>
-            <span>graduating</span>
-            <span>&nbsp;</span>
-            <span>Master's</span>
-            <span>&nbsp;</span>
-            <span>student</span>
-            <span>&nbsp;</span>
-            <span>majoring</span>
-            <span>&nbsp;</span>
-            <span>in</span>
-            <span>&nbsp;</span>
-            <span>Computer</span>
-            <span>&nbsp;</span>
-            <span>Science.</span>
-          </h4>
-          <p>
-            <span>Hello,</span>
-            <span>&nbsp;</span>
-            <span>I'm</span>
-            <span>&nbsp;</span>
-            <span>a</span>
-            <span>&nbsp;</span>
-            <span>person</span>
-            <span>&nbsp;</span>
-            <span>who</span>
-            <span>&nbsp;</span>
-            <span>loves</span>
-            <span>&nbsp;</span>
-            <span>learning</span>
-            <span>&nbsp;</span>
-            <span>and</span>
-            <span>&nbsp;</span>
-            <span>finds</span>
-            <span>&nbsp;</span>
-            <span>great</span>
-            <span>&nbsp;</span>
-            <span>motivation</span>
-            <span>&nbsp;</span>
-            <span>in</span>
-            <span>&nbsp;</span>
-            <span>things</span>
-            <span>&nbsp;</span>
-            <span>that</span>
-            <span>&nbsp;</span>
-            <span>help</span>
-            <span>&nbsp;</span>
-            <span>me</span>
-            <span>&nbsp;</span>
-            <span>grow.</span>
-            <span>&nbsp;</span>
-            <span>I</span>
-            <span>&nbsp;</span>
-            <span>enjoy</span>
-            <span>&nbsp;</span>
-            <span>engaging</span>
-            <span>&nbsp;</span>
-            <span>in</span>
-            <span>&nbsp;</span>
-            <span>conversations</span>
-            <span>&nbsp;</span>
-            <span>with</span>
-            <span>&nbsp;</span>
-            <span>others.</span>
-            <span>&nbsp;</span>
-          </p>
-          <p>
-            <span>In</span>
-            <span>&nbsp;</span>
-            <span>addition</span>
-            <span>&nbsp;</span>
-            <span>to</span>
-            <span>&nbsp;</span>
-            <span>that,</span>
-            <span>&nbsp;</span>
-            <span>I</span>
-            <span>&nbsp;</span>
-            <span>have</span>
-            <span>&nbsp;</span>
-            <span>a</span>
-            <span>&nbsp;</span>
-            <span>passion</span>
-            <span>&nbsp;</span>
-            <span>for</span>
-            <span>&nbsp;</span>
-            <span>dancing</span>
-            <span>&nbsp;</span>
-            <span>and</span>
-            <span>&nbsp;</span>
-            <span>painting.</span>
-            <span>&nbsp;</span>
-            <span>Currently,</span>
-            <span>&nbsp;</span>
-            <span>I</span>
-            <span>&nbsp;</span>
-            <span>am</span>
-            <span>&nbsp;</span>
-            <span>concentrate</span>
-            <span>&nbsp;</span>
-            <span>on</span>
-            <span>&nbsp;</span>
-            <span>my</span>
-            <span>&nbsp;</span>
-            <span>second</span>
-            <span>&nbsp;</span>
-            <span>year</span>
-            <span>&nbsp;</span>
-            <span>of</span>
-            <span>&nbsp;</span>
-            <span>graduate</span>
-            <span>&nbsp;</span>
-            <span>school</span>
-            <span>&nbsp;</span>
-            <span>and</span>
-            <span>&nbsp;</span>
-            <span>working</span>
-            <span>&nbsp;</span>
-            <span>on</span>
-            <span>&nbsp;</span>
-            <span>my</span>
-            <span>&nbsp;</span>
-            <span>thesis.</span>
-            <span>&nbsp;</span>
-          </p>
-          <Link to="/about" className="link">
-            See More About Me.
-            <div className="arrow-container">
-              <img
-                src={arrowIcon}
-                className={isDarkTheme ? "arrow-dark" : "arrow"}
-              ></img>
-            </div>
+          <div className="carousel-item">
+            <img
+              src={pic_}
+              alt="img"
+              className="w-48 rounded-lg shadow-2xl rounded-box md:w-80"
+            />
+          </div>
+        </div>
+
+        <div className="gap-4 flex flex-col items-center md:block">
+          <div className="mockup-code">
+            <pre data-prefix="$">
+              <code>Hi, I'm Jun-Shen, Lin.</code>
+            </pre>
+            <pre data-prefix=">" className="text-warning">
+              <code>Graduated in 2023</code>
+            </pre>
+            <pre data-prefix=">" className="text-warning">
+              <code>Computer Science from NCU</code>
+            </pre>
+            <pre data-prefix=">" className="text-success">
+              <code>Done!</code>
+            </pre>
+          </div>
+          <Link to="/about">
+            <button className="btn btn-primary mt-4">See More About Me.</button>
           </Link>
         </div>
-      </section>
+        <div className="hidden avatar m-4 md:block">
+          <div className="w-24 rounded-3xl">
+            <img src={logoImg} alt="GIF" className="" />
+          </div>
+        </div>
+      </div>
       <Outlet />
-    </Wrapper>
+    </section>
   );
 };
 
